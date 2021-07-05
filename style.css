@@ -63,14 +63,14 @@ body {
   transition: ease 0.2s;
 }
 
-.data-list-header {
+.country-list-header {
   display: flex;
   justify-content: space-between;
   border-bottom: 3px solid #63b2c3;
   padding-bottom: 0;
 }
 
-.data-list-container {
+.country-list-container {
   background-color: #292929;
   padding: 2rem;
   border-radius: 20px;
