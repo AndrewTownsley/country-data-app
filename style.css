@@ -71,7 +71,26 @@ body {
 }
 
 .country-list-container {
+  display: flex;
+  flex-direction: column;
   background-color: #292929;
   padding: 2rem;
   border-radius: 20px;
+}
+
+.country-list {
+  list-style: none;
+  width: 100%;
+}
+
+.country-item {
+  display: flex;
+  cursor: default;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.country-item:hover {
+  background-color: #3d3d3d;
 }

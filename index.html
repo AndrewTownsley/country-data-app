@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="app.js"></script>
+    <script defer src="app.js"></script>
     <title>Country Data</title>
 </head>
 <body>
@@ -20,18 +20,18 @@
 
 <section class="app-container">
     <section class="btn-container">
-        <button id="sortBtn" class="data-btn">Sort by Vehicles</button>
-        <button id="twentyBtn" class="data-btn">20m Vehicles</button>
-        <button id="totalBtn" class="data-btn">Calculate total Vehicles</button>
+        <button id="popSortBtn" class="data-btn">Sort by Population</button>
+        <button id="densityBtn" class="data-btn">Sort by Density</button>
+        <button id="twentyBtn" class="data-btn">20m Population</button>
         <button id="englishBtn" class="data-btn">Show English Speaking</button>
     </section class="btn-container">
     <section class="country-list-container">
         <header class="country-list-header">
             <h2>Country</h2>
             <h2>Population</h2>
-            <h2>Vehicles</h2>
-        </header">
-        <section id="countryList" class="data-list">
+            <h2>Density</h2>
+        </header>
+        <section id="countryList" class="country-list">
          
         </section>
     </section>
