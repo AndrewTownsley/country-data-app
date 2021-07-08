@@ -18,7 +18,8 @@ function fetchCountry() {
         data.forEach((country) => {
             const newCountry = {
                 name: country.name,
-                population: country.population
+                population: country.population,
+                area: country.area
             }
             displayCountry(data)
             pushData(newCountry)
