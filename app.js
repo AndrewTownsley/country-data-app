@@ -7,42 +7,42 @@ let countryData = []
 
 fetchCountry()
 
-// function fetchCountry() {
-//     fetch("https://restcountries.eu/rest/v2/region/europe")
-//     .then((response) => {
-//         return response.json();
-//     })
-//     .then((data) => {
-//         // console.log(data);
+function fetchCountry() {
+    fetch("https://restcountries.eu/rest/v2/region/europe")
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => {
+        // console.log(data);
         
-        // data.forEach((country) => {
-        //     const newCountry = {
-        //         name: country.name,
-        //         population: country.population
-        //     }
-        //     displayCountry(data)
-        //     pushData(newCountry)
-        // })
-//         console.log(countryData);
-//     })
-// }
+        data.forEach((country) => {
+            const newCountry = {
+                name: country.name,
+                population: country.population
+            }
+            displayCountry(data)
+            pushData(newCountry)
+        })
+        console.log(countryData);
+    })
+}
 
 //============================================================================
 
-async function fetchCountry() {
-    const response = await fetch("https://restcountries.eu/rest/v2/region/europe");
-    const data = await response.json();
+// async function fetchCountry() {
+//     const response = await fetch("https://restcountries.eu/rest/v2/region/europe");
+//     const data = await response.json();
 
     
-    data.forEach((country) => {
-        const newCountry = {
-            name: country.name,
-            population: country.population
-        }
-        displayCountry(data)
-        pushData(newCountry)
-    })
-}
+//     data.forEach((country) => {
+//         const newCountry = {
+//             name: country.name,
+//             population: country.population
+//         }
+//         displayCountry(data)
+//         pushData(newCountry)
+//     })
+// }
 
 
 //============================================================================
@@ -53,7 +53,8 @@ const populationSort = () => {
         return (a.population > b.population) ? -1 : 1;
     })
     console.log(sortedPop);
-    // displayCountry() 
+    displayCountry();
+    
 }
 
 const pushData = (object) => {
@@ -61,7 +62,7 @@ const pushData = (object) => {
     // displayCountry()
 }
 
-const displayCountry = (countryData) => {
+const displayCountry = () => {
 
     countryList.innerHTML = "";
     countryData.forEach((country) => {
