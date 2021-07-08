@@ -28,26 +28,6 @@ function fetchCountry() {
     })
 }
 
-//============================================================================
-
-// async function fetchCountry() {
-//     const response = await fetch("https://restcountries.eu/rest/v2/region/europe");
-//     const data = await response.json();
-
-    
-//     data.forEach((country) => {
-//         const newCountry = {
-//             name: country.name,
-//             population: country.population
-//         }
-//         displayCountry(data)
-//         pushData(newCountry)
-//     })
-// }
-
-
-//============================================================================
-
 const populationSort = () => {
     let sortedPop = 
     countryData.sort((a, b) => {
@@ -55,7 +35,18 @@ const populationSort = () => {
     })
     console.log(sortedPop);
     displayCountry();
-    
+}
+
+const densitySort = () => {
+
+}
+
+const twentySort = () => {
+
+}
+
+const englishSort = () => {
+
 }
 
 const pushData = (object) => {
@@ -74,12 +65,15 @@ const displayCountry = () => {
                 <span>${country.name}</span>
                 <span> ${country.population}</span>
                 <span> ${country.area == null ? "N/A" :
-                (country.population / country.area).toFixed(2)}</span>
+                (country.population / country.area).toFixed(0)}</span>
             `
             countryList.appendChild(countryItem);
         })
 }
 
 popSortBtn.addEventListener("click", populationSort);
+densityBtn.addEventListener("click", densitySort);
+twentyBtn.addEventListener("click", twentySort);
+englishBtn.addEventListener("click", englishSort);
 
 
