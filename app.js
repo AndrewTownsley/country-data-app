@@ -19,26 +19,27 @@ function fetchCountry() {
             const newCountry = {
                 name: country.name,
                 population: country.population,
-                area: country.area
+                area: country.area,
+                density: country.population/country.area
             }
             displayCountry(data)
             pushData(newCountry)
         })
-        console.log(countryData);
     })
 }
 
 const populationSort = () => {
-    let sortedPop = 
     countryData.sort((a, b) => {
         return (a.population > b.population) ? -1 : 1;
     })
-    console.log(sortedPop);
     displayCountry();
 }
 
 const densitySort = () => {
-
+    countryData.sort((a, b) => {
+        return (a.density > b.density) ? -1 : 1;
+    })
+    displayCountry();
 }
 
 const twentySort = () => {
@@ -73,7 +74,7 @@ const displayCountry = () => {
 
 popSortBtn.addEventListener("click", populationSort);
 densityBtn.addEventListener("click", densitySort);
-twentyBtn.addEventListener("click", twentySort);
-englishBtn.addEventListener("click", englishSort);
+// twentyBtn.addEventListener("click", twentySort);
+// englishBtn.addEventListener("click", englishSort);
 
 
