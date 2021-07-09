@@ -59,6 +59,10 @@ const englishSort = () => {
     displayCountry();
 }
 
+const resetData = () => {
+    location.reload();
+}
+
 const pushData = (object) => {
     countryData.push(object)
     // displayCountry()
@@ -85,6 +89,6 @@ popSortBtn.addEventListener("click", populationSort);
 densityBtn.addEventListener("click", densitySort);
 twentyBtn.addEventListener("click", twentySort);
 englishBtn.addEventListener("click", englishSort);
-// resetBtn.addEventListener("click", displayCountry);
+resetBtn.addEventListener("click", resetData);
 
 
