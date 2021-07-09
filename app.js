@@ -2,6 +2,7 @@ const popSortBtn = document.getElementById("popSortBtn")
 const densityBtn = document.getElementById("densityBtn")
 const twentyBtn = document.getElementById("twentyBtn")
 const englishBtn = document.getElementById("englishBtn")
+const resetBtn = document.getElementById("resetBtn")
 const countryList = document.getElementById("countryList")
 let countryData = []
 
@@ -20,10 +21,12 @@ function fetchCountry() {
                 name: country.name,
                 population: country.population,
                 area: country.area,
-                density: country.population/country.area
+                density: country.population/country.area,
+                language: country.languages[0].name,
             }
             displayCountry(data)
             pushData(newCountry)
+            // console.log(countryData);
         })
     })
 }
@@ -42,12 +45,20 @@ const densitySort = () => {
     displayCountry();
 }
 
-const twentySort = () => {
-
-}
+// const twentySort = () => {
+//     let sortByTwenty = 
+//     countryData.filter((item) => {
+//        return item.population > 20000000
+//     });
+//     displayCountry();
+//     console.log(sortByTwenty);
+// }
 
 const englishSort = () => {
-
+    countryData = countryData.filter((country) => {
+        return country.language == "English"; 
+    })
+    displayCountry();
 }
 
 const pushData = (object) => {
@@ -75,6 +86,7 @@ const displayCountry = () => {
 popSortBtn.addEventListener("click", populationSort);
 densityBtn.addEventListener("click", densitySort);
 // twentyBtn.addEventListener("click", twentySort);
-// englishBtn.addEventListener("click", englishSort);
+englishBtn.addEventListener("click", englishSort);
+// resetBtn.addEventListener("click", displayCountry);
 
 

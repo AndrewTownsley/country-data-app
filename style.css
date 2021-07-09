@@ -35,7 +35,7 @@ body {
 }
 
 .region-btn:hover {
-  background-color: rgba(167, 193, 199, 0.6);
+  background-color: rgba(119, 138, 143, 0.6);
   transition: ease 0.2s;
 }
 
@@ -59,7 +59,7 @@ body {
 }
 
 .data-btn:hover {
-  background-color: rgba(167, 193, 199, 0.6);
+  background-color: rgba(119, 138, 143, 0.6);
   transition: ease 0.2s;
 }
 
