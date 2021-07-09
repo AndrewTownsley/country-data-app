@@ -45,14 +45,12 @@ const densitySort = () => {
     displayCountry();
 }
 
-// const twentySort = () => {
-//     let sortByTwenty = 
-//     countryData.filter((item) => {
-//        return item.population > 20000000
-//     });
-//     displayCountry();
-//     console.log(sortByTwenty);
-// }
+const twentySort = () => {
+    countryData = countryData.filter((item) => {
+       return item.population > 20000000
+    });
+    displayCountry();
+}
 
 const englishSort = () => {
     countryData = countryData.filter((country) => {
@@ -75,7 +73,7 @@ const displayCountry = () => {
             countryItem.innerHTML =  
             `
                 <span>${country.name}</span>
-                <span> ${country.population}</span>
+                <span> ${country.population.toLocaleString('en-US')}</span>
                 <span> ${country.area == null ? "N/A" :
                 (country.population / country.area).toFixed(0)}</span>
             `
@@ -85,7 +83,7 @@ const displayCountry = () => {
 
 popSortBtn.addEventListener("click", populationSort);
 densityBtn.addEventListener("click", densitySort);
-// twentyBtn.addEventListener("click", twentySort);
+twentyBtn.addEventListener("click", twentySort);
 englishBtn.addEventListener("click", englishSort);
 // resetBtn.addEventListener("click", displayCountry);
 
