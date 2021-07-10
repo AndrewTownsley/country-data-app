@@ -84,11 +84,16 @@ body {
 }
 
 .country-item {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   cursor: default;
-  justify-content: space-between;
+  text-align: left;
   padding: 1rem;
   border-radius: 10px;
+}
+
+.country-item .density {
+  text-align: right;
 }
 
 .country-item:hover {

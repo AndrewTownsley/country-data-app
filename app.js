@@ -4,12 +4,32 @@ const twentyBtn = document.getElementById("twentyBtn")
 const englishBtn = document.getElementById("englishBtn")
 const resetBtn = document.getElementById("resetBtn")
 const countryList = document.getElementById("countryList")
+// const africaBtn = document.getElementById("africa")
+// const asiaBtn = document.getElementById("asia")
+// const americasBtn = document.getElementById("americas")
+// const europeBtn = document.getElementById("europe")
 let countryData = []
+let region = "asia"
+
+
+
+
+
+// Make the continent buttons functional.
+// Align the rows of data properly.
+
+
 
 fetchCountry()
 
+// const setRegion = (event) => {
+//     let region = event.target.dataset;
+//     console.log(region);
+//     // return region;
+// }
+
 function fetchCountry() {
-    fetch("https://restcountries.eu/rest/v2/region/europe")
+    fetch(`https://restcountries.eu/rest/v2/region/${region}`)
     .then((response) => {
         return response.json();
     })
@@ -68,6 +88,9 @@ const pushData = (object) => {
     // displayCountry()
 }
 
+////////////////////////////////////////////////
+// Continent Buttons...
+
 const displayCountry = () => {
 
     countryList.innerHTML = "";
@@ -78,8 +101,8 @@ const displayCountry = () => {
             `
                 <span>${country.name}</span>
                 <span> ${country.population.toLocaleString('en-US')}</span>
-                <span> ${country.area == null ? "N/A" :
-                (country.population / country.area).toFixed(0)}</span>
+                <span class="density"> ${country.area == null ? "N/A" :
+                (country.population / country.area).toFixed(0)} people/SQ km</span>
             `
             countryList.appendChild(countryItem);
         })
@@ -90,5 +113,9 @@ densityBtn.addEventListener("click", densitySort);
 twentyBtn.addEventListener("click", twentySort);
 englishBtn.addEventListener("click", englishSort);
 resetBtn.addEventListener("click", resetData);
+// africaBtn.addEventListener("click", setRegion);
+// asiaBtn.addEventListener("click", setRegion);
+// americasBtn.addEventListener("click", setRegion);
+// europeBtn.addEventListener("click", setRegion);
 
 
